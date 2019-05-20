@@ -15,7 +15,7 @@ from web3.contract import (
 )
 
 import wings
-from wings.wallet.ethereum.ethereum_chain import EthereumChain
+from hummingbot.wallet.ethereum.ethereum_chain import EthereumChain
 
 
 with open(os.path.join(os.path.dirname(__file__), 'token_abi/erc20_abi.json')) as erc20_abi:

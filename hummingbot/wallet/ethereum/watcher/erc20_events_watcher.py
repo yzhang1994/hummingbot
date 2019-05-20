@@ -1,10 +1,7 @@
 #!/usr/bin/env python
 
 import asyncio
-from async_timeout import timeout
-from collections import OrderedDict
 import cytoolz
-import functools
 from hexbytes import HexBytes
 import logging
 import math
@@ -25,7 +22,7 @@ from wings.events import (
     TokenApprovedEvent,
     ERC20WatcherEvent
 )
-from wings.wallet.ethereum.erc20_token import ERC20Token
+from hummingbot.wallet.ethereum.erc20_token import ERC20Token
 from wings.event_forwarder import EventForwarder
 from .base_watcher import BaseWatcher
 from .new_blocks_watcher import NewBlocksWatcher

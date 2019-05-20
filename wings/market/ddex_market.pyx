@@ -44,7 +44,7 @@ from hummingbot.core.network_iterator import (
 from wings.order_book cimport OrderBook
 from wings.order_book_tracker import OrderBookTrackerDataSourceType
 from wings.tracker.ddex_order_book_tracker import DDEXOrderBookTracker
-from wings.wallet.ethereum.web3_wallet import Web3Wallet
+from hummingbot.wallet.ethereum.web3_wallet import Web3Wallet
 
 
 s_logger = None

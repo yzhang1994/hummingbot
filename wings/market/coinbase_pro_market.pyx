@@ -44,8 +44,8 @@ from wings.tracker.coinbase_pro_user_stream_tracker import CoinbaseProUserStream
 from wings.data_source.coinbase_pro_api_order_book_data_source import CoinbaseProAPIOrderBookDataSource
 from wings.cancellation_result import CancellationResult
 from wings.transaction_tracker import TransactionTracker
-from wings.wallet.wallet_base import WalletBase
-from wings.wallet.wallet_base cimport WalletBase
+from hummingbot.wallet.wallet_base import WalletBase
+from hummingbot.wallet.wallet_base cimport WalletBase
 
 s_logger = None
 s_decimal_0 = Decimal(0)
