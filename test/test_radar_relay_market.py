@@ -11,11 +11,11 @@ import logging
 import unittest
 from typing import List
 from wings.cancellation_result import CancellationResult
-from hummingbot.market import OrderType
-from wings.wallet.web3_wallet import Web3Wallet
-from wings.wallet.web3_wallet_backend import EthereumChain
+from hummingbot.market.market_base import OrderType
+from hummingbot.wallet.ethereum.web3_wallet import Web3Wallet
+from hummingbot.wallet.ethereum.ethereum_chain import EthereumChain
 from hummingbot.core.clock import Clock, ClockMode
-from hummingbot.market.radar_relay import RadarRelayMarket
+from hummingbot.market.radar_relay.radar_relay_market import RadarRelayMarket
 from wings.event_logger import EventLogger
 from wings.order_book_tracker import OrderBookTrackerDataSourceType
 from wings.events import (
@@ -68,7 +68,7 @@ class RadarRelayMarketUnitTest(unittest.TestCase):
         cls.market: RadarRelayMarket = RadarRelayMarket(wallet=cls.wallet,
                                                         ethereum_rpc_url=conf.test_web3_provider_list[0],
                                                         order_book_tracker_data_source_type=
-                                                            OrderBookTrackerDataSourceType.EXCHANGE_API,
+                                                        OrderBookTrackerDataSourceType.EXCHANGE_API,
                                                         symbols=["ZRX-WETH"])
         print("Initializing Radar Relay market... ")
         cls.ev_loop: asyncio.BaseEventLoop = asyncio.get_event_loop()

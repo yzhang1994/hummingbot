@@ -12,7 +12,7 @@ import unittest
 from typing import List
 from hummingbot.core.clock import Clock, ClockMode
 from hummingbot.market.ddex.ddex_market import DDEXMarket
-from wings.ethereum_chain import EthereumChain
+from hummingbot.wallet.ethereum.ethereum_chain import EthereumChain
 from wings.events import (
     MarketEvent,
     WalletEvent,
@@ -29,7 +29,7 @@ from wings.events import (
 from wings.event_logger import EventLogger
 from hummingbot.market import OrderType
 from wings.order_book_tracker import OrderBookTrackerDataSourceType
-from wings.wallet.web3_wallet import Web3Wallet
+from hummingbot.wallet.ethereum.web3_wallet import Web3Wallet
 
 
 class DDEXMarketUnitTest(unittest.TestCase):

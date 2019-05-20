@@ -9,7 +9,8 @@ from typing import (
 from web3 import Web3
 from web3.datastructures import AttributeDict
 
-from wings.erc20_token import ERC20Token
+from hummingbot.wallet.ethereum.erc20_token import ERC20Token
+from hummingbot.wallet.wallet_base cimport WalletBase
 
 s_logger = None
 

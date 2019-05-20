@@ -11,11 +11,14 @@ import logging
 import unittest
 from typing import List
 from wings.cancellation_result import CancellationResult
-from hummingbot.market import OrderType
-from wings.wallet.web3_wallet import Web3Wallet
-from wings.wallet.web3_wallet_backend import EthereumChain
-from wings.clock import Clock, ClockMode
-from hummingbot.market import BambooRelayMarket
+from hummingbot.market.market_base import OrderType
+from hummingbot.market.bamboo_relay.bamboo_relay_market import BambooRelayMarket
+from hummingbot.wallet.ethereum.web3_wallet import Web3Wallet
+from hummingbot.wallet.ethereum.ethereum_chain import EthereumChain
+from hummingbot.core.clock import (
+    Clock,
+    ClockMode,
+)
 from wings.event_logger import EventLogger
 from wings.order_book_tracker import OrderBookTrackerDataSourceType
 from wings.events import (
@@ -66,10 +69,10 @@ class BambooRelayMarketUnitTest(unittest.TestCase):
                                 erc20_token_addresses=[conf.mn_zerox_token_address, conf.mn_weth_token_address],
                                 chain=EthereumChain.MAIN_NET)
         cls.market: BambooRelayMarket = BambooRelayMarket(wallet=cls.wallet,
-                                                        web3_url=conf.test_web3_provider_list[0],
-                                                        order_book_tracker_data_source_type=
-                                                            OrderBookTrackerDataSourceType.EXCHANGE_API,
-                                                        symbols=["ZRX-WETH"])
+                                                          web3_url=conf.test_web3_provider_list[0],
+                                                          order_book_tracker_data_source_type=
+                                                          OrderBookTrackerDataSourceType.EXCHANGE_API,
+                                                          symbols=["ZRX-WETH"])
         print("Initializing Bamboo Relay market... ")
         cls.ev_loop: asyncio.BaseEventLoop = asyncio.get_event_loop()
         cls.clock.add_iterator(cls.wallet)
